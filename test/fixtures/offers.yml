@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  city: MyString
+  company_id: 1
+  country_code: MyString
+  country_name: MyString
+  currency_code: MyString
+  expires_at: 2016-02-11
+  nice_to_have: MyString
+  perks: MyString
+  published_at: 2016-02-11
+  reward: 1
+  remote: false
+  relocation_paid: false
+  role_description: MyString
+  salary_low: MyString
+  salary_high: MyString
+  sucessful?: false
+  title: MyString
+  work_from_home: 
+  created_at: 2016-02-11
+  updated_at: 2016-02-11
+  type: 
+  tags: 
+
+two:
+  city: MyString
+  company_id: 1
+  country_code: MyString
+  country_name: MyString
+  currency_code: MyString
+  expires_at: 2016-02-11
+  nice_to_have: MyString
+  perks: MyString
+  published_at: 2016-02-11
+  reward: 1
+  remote: false
+  relocation_paid: false
+  role_description: MyString
+  salary_low: MyString
+  salary_high: MyString
+  sucessful?: false
+  title: MyString
+  work_from_home: 
+  created_at: 2016-02-11
+  updated_at: 2016-02-11
+  type: 
+  tags: 
