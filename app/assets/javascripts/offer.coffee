@@ -31,9 +31,14 @@ $(document).ready ->
 
 # appends selected tags to get url before submit
 $(document).on 'ajax:beforeSend','#search-form',(event,xhr,settings) ->
-    settings.url += "&tags=" + get_selected_tags(event.currentTarget)
+    tags = get_selected_tags(event.currentTarget)
+    # validation
+    if tags.length is 0
+        return false
+    else
+        settings.url += "&tags=" + tags
 
 # show search results
 $(document).on 'ajax:success','#search-form',(event,xhr,settings) ->
-    $(".search-result").html(xhr)
+    $("#response-block").html(xhr)
 

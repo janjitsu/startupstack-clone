@@ -3,13 +3,11 @@
 @import "fonts";
 @import "offer";
 
-
-
 body {
-    background: #282A33;
+    background: $deep_grey;
     font-family: "Raleway";
-    font-size: 0.7em;
-    color:#FFFFFF;
+    font-size: 1.2em;
+    color:$text_color;
 }
 
 header {
@@ -20,14 +18,25 @@ header {
     }
     img {
         width: 18em;
+        float:left;    
+        display:block;
     }
 }
 
 #main-container {
-    min-height:30em;
+    margin-top: 0.5em;
     text-align: center;
     h1 {
         font-size: 1.5em;
+        text-align: center;
+    }
+}
+
+#response-block {
+    background: white;
+    color: $deep_grey;
+    .container {
+        padding-top: 6em;
     }
 }
 

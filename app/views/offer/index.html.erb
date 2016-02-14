@@ -1,26 +1,33 @@
-<h1>Find companies that use your favorite language & technologies</h1>
-<div class="counter">
-    <span>12345</span> requests made among <span>123</span> companies
-</div>
-<%= form_tag(offer_search_path, method:"get",remote: true, id:"search-form") do %>
-    <div id="tag-select">
-        <ul>
-            <li class="selected">Java</li>
-            <li>Ruby</li>
-            <li>Ruby</li>
-            <li>Python</li>
-            <li>PHP</li>
-            <li>JavaScript</li>
-        </ul>
-        <hr/>
-        <ul>
-            <li>Magento</li>
-            <li>Django</li>
-            <li>MongoDB</li>
-            <li>Cassandra</li>
-            <li>AngularJS</li>
-        </ul>
+<div class="container">
+    <div class="row">
+        <h1>Find companies that use your favorite language & technologies</h1>
     </div>
-    <%= submit_tag("Find my dream company", name:nil, class:"search-buttom")%>
-<% end %>
-<div class="search-result"></div>
+    <div class="row">
+        <div class="counter">
+            <span>12345</span> requests made among <span><%= @company_count %></span> companies
+        </div>
+    </div>
+    <div class="row">
+    <%= form_tag(offer_search_path, method:"get",remote: true, id:"search-form") do %>
+        <div id="tag-select">
+            <ul>
+                <li>Java</li>
+                <li>Ruby</li>
+                <li>Python</li>
+                <li>PHP</li>
+                <li>JavaScript</li>
+            </ul>
+            <hr/>
+            <ul>
+                <li>Magento</li>
+                <li>Django</li>
+                <li>MongoDB</li>
+                <li>Cassandra</li>
+                <li>AngularJS</li>
+                <li>Branding</li>
+            </ul>
+        </div>
+        <%= submit_tag("Find my dream company", name:nil, class:"search-button")%>
+    </div>
+    <% end %>
+</div>

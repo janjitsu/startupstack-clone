@@ -9,9 +9,10 @@
 <body>
 <div id="wrapper">
     <%= render 'layouts/header' %>
-    <div id="main-container" class="container">
+    <div id="main-container">
         <%= yield %>
     </div>
+    <div id="response-block"></div>
     <%= render 'layouts/footer' %>
 </div>
 </body>

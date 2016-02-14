@@ -28,5 +28,5 @@ class Offer
   belongs_to :company, class_name: "Company", inverse_of: :offers
 
   #common queries
-  scope :with_tags, -> (tags) { any_in(:tags => tags) }
+  scope :with_tags, -> (tags) { all_in(:tags => tags) }
 end
