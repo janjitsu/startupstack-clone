@@ -1,0 +1,26 @@
+<h1>Find companies that use your favorite language & technologies</h1>
+<div class="counter">
+    <span>12345</span> requests made among <span>123</span> companies
+</div>
+<%= form_tag(offer_search_path, method:"get",remote: true, id:"search-form") do %>
+    <div id="tag-select">
+        <ul>
+            <li class="selected">Java</li>
+            <li>Ruby</li>
+            <li>Ruby</li>
+            <li>Python</li>
+            <li>PHP</li>
+            <li>JavaScript</li>
+        </ul>
+        <hr/>
+        <ul>
+            <li>Magento</li>
+            <li>Django</li>
+            <li>MongoDB</li>
+            <li>Cassandra</li>
+            <li>AngularJS</li>
+        </ul>
+    </div>
+    <%= submit_tag("Find my dream company", name:nil, class:"search-buttom")%>
+<% end %>
+<div class="search-result"></div>

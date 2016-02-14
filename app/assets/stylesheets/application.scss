@@ -1,0 +1,40 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "fonts";
+@import "offer";
+
+
+
+body {
+    background: #282A33;
+    font-family: "Raleway";
+    font-size: 0.7em;
+    color:#FFFFFF;
+}
+
+header {
+    color: #D6AB4E;
+    height: 10em;
+    .header-info {
+        margin-top: 2.5em;
+    }
+    img {
+        width: 18em;
+    }
+}
+
+#main-container {
+    min-height:30em;
+    text-align: center;
+    h1 {
+        font-size: 1.5em;
+    }
+}
+
+footer {
+    background:black;
+    color:pink;
+    clear:both;
+    min-height:5em;
+    line-height:5em;
+}

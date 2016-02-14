@@ -27,9 +27,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bson_ext'
 gem 'mongoid', '~> 5.0.0'
 
-#for rest clients
+#for rest client
 gem 'faraday'
 gem 'faraday_middleware'
+
+#use bootstrap
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'autoprefixer-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -49,6 +53,8 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  gem 'guard'
+  gem 'guard-livereload', require: false
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

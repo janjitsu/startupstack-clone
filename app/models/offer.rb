@@ -26,4 +26,7 @@ class Offer
   field :url,                 type: String
 
   belongs_to :company, class_name: "Company", inverse_of: :offers
+
+  #common queries
+  scope :with_tags, -> (tags) { any_in(:tags => tags) }
 end
