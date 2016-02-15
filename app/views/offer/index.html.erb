@@ -11,20 +11,11 @@
     <%= form_tag(offer_search_path, method:"get",remote: true, id:"search-form") do %>
         <div id="tag-select">
             <ul>
-                <li>Java</li>
-                <li>Ruby</li>
-                <li>Python</li>
-                <li>PHP</li>
-                <li>JavaScript</li>
-            </ul>
-            <hr/>
-            <ul>
-                <li>Magento</li>
-                <li>Django</li>
-                <li>MongoDB</li>
-                <li>Cassandra</li>
-                <li>AngularJS</li>
-                <li>Branding</li>
+                <% @tags.each do |tag|  %>
+                    <% if tag[:c] > 5%>
+                        <li title="<%= tag[:c]%> offers"><%= tag[:_id] %></li>
+                    <% end %>
+                <% end %>
             </ul>
         </div>
         <%= submit_tag("Find my dream company", name:nil, class:"search-button")%>

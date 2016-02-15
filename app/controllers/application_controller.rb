@@ -5,5 +5,6 @@ class ApplicationController < ActionController::Base
   
   def index
     @company_count = Company.count
+    @tags = Offer.get_tags_count
   end
 end

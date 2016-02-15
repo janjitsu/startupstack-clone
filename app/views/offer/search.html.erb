@@ -1,4 +1,9 @@
 <div class="container">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8 col-md-suffix-2">
+            <h4 class="result-message"><span><%= pluralize(@offers.count,"offers") %></span> to follow your dream</h4>
+        </div>
+    </div>
     <% @offers.each do |offer| %>
         <% unless offer.company.nil? %>
             <% #offer.to_a %>
@@ -13,6 +18,7 @@
                     <% if offer.salary_low and offer.salary_high %>
                         <h3><%= offer.salary_low %> to <%= offer.salary_high %> <%=offer.currency_code %></h3>
                     <% end %>
+                    <h3>TAGS: <%= offer.tags.join(', ')%></h3>
                 </div>
             </div>
             <hr/>

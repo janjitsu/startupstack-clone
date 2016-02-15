@@ -39,6 +39,14 @@ $text_color: #FFFFFF;
     padding: 10px;
 }
 
+h4.result-message {
+    text-align:center;
+    font-weight:bold;
+    span {
+        color: $orange;
+    }
+}
+
 .offer-item {
     margin: 40px 0;
     img {

@@ -29,4 +29,19 @@ class Offer
 
   #common queries
   scope :with_tags, -> (tags) { all_in(:tags => tags) }
+
+  def self.get_tags_count
+    #self.collection.aggregate([
+    #  {"$group"=>{"_id"=>"$tags","c"=>{"$sum"=>1}}},
+    #  {"$unwind":"$_id"},
+    #  {"$group":{"_id":"$_id","c":{"$sum":"$c"}}},{"$sort":{"c":-1}}
+    #])
+    self.collection.aggregate([ 
+      {"$unwind":"$tags"}, 
+      {"$group"=>{"_id"=>"$tags","c"=>{"$sum"=>1}}},
+      {"$sort":{"c":-1}} 
+    ])
+  end
 end
+
+
