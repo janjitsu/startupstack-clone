@@ -1,9 +1,9 @@
 production:
   clients:
     default:
-      database: startupstack_clone_production
+      database: <%= ENV["PRODUCTION_DATABASE"] %>
       hosts:
-        - localhost:27017
+        - <%= ENV["PRODUCTION_DATABASE_HOSTNAME"] %>
       options:
         read:
           mode: :primary
