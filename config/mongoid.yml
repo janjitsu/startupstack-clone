@@ -1,13 +1,15 @@
+<% if ENV['MONGOLAB_URI'] %>
+  <% uri = URI.parse(ENV['MONGOLAB_URI']) %>
 production:
   clients:
     default:
-      database: <%= ENV["PRODUCTION_DATABASE"] %>
+      database: <%= uri.path.sub('/','') %>
       hosts:
-        - <%= ENV["PRODUCTION_DATABASE_HOSTNAME"] %>
+        - <%= uri.host %>:<%= uri.port %>
       options:
-        read:
-          mode: :primary
-        max_pool_size: 1
+        user: <%= uri.user %>
+        password: <%= uri.password %>
+<% end %>
 development:
   # Configure available database clients. (required)
   clients:
