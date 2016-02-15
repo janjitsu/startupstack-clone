@@ -1,3 +1,13 @@
+production:
+  clients:
+    default:
+      database: startupstack_clone_production
+      hosts:
+        - localhost:27017
+      options:
+        read:
+          mode: :primary
+        max_pool_size: 1
 development:
   # Configure available database clients. (required)
   clients:
