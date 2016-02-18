@@ -10,15 +10,26 @@ class OfferService
   end
 
   def load_offers
-    page = 0
-    loop do 
-      page+=1
-      offers = @landing_jobs.get_offers(page)
-      break if offers.empty?
-      offers.reject! do |offer|
-        Offer.where(id:offer['id']).exists?
-      end
-      Offer.create(offers)
+    Offer.create(self.get_new_offers)
+  end
+
+  def get_new_offers
+    offers = self.get_all_offers
+    offers.reject! do |offer|
+      Offer.where(id:offer['id']).exists?
     end
+    offers
+  end
+
+  def get_all_offers
+    page = 0
+    offers = []
+    loop do 
+      offers_page = @landing_jobs.get_offers(page)
+      page+=1
+      break if offers_page.empty?
+      offers += offers_page
+    end
+    offers
   end
 end
