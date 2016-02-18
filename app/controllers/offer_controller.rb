@@ -1,6 +1,6 @@
 class OfferController < ApplicationController
   def search
-    @offers = Offer.with_tags(params[:tags].split(","))
+    @companies = Company.with_tags(params[:tags].split(","))
   end
 
   def create

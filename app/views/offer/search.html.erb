@@ -1,27 +1,15 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-offset-2 col-md-8 col-md-suffix-2">
-            <h4 class="result-message"><span><%= pluralize(@offers.count,"offers") %></span> to follow your dream</h4>
+            <h4 class="result-message"><span><%= pluralize(@companies.count,"company") %></span> to follow your dream</h4>
         </div>
     </div>
-    <% @offers.each do |offer| %>
-        <% unless offer.company.nil? %>
-            <% #offer.to_a %>
-            <div class="row offer-item">
-                <div class="col-md-offset-3 col-md-2 col-xs-12">
-                    <% #TODO move this to helper %>
-                    <%= link_to image_tag(offer.company.logo_url,title: offer.company.name + ' - ' + offer.company.short_pitch), offer.company.website_url  %>
-                </div>
-                <div class="col-md-5 col-xs-12">
-                    <h2><%= offer.title %></h2>
-                    <h4>at <span><%= offer.city %>, <%= offer.country_name %></span></h4>
-                    <% if offer.salary_low and offer.salary_high %>
-                        <h3><%= offer.salary_low %> to <%= offer.salary_high %> <%=offer.currency_code %></h3>
-                    <% end %>
-                    <h3>TAGS: <%= offer.tags.join(', ')%></h3>
-                </div>
+    <div class="row offer-item">
+        <% @companies.each do |company| %>
+            <div class="center-block col-xs-12 col-lg-3 col-md-3 col-sm-6 img-responsive">
+                <% #TODO move this to helper %>
+                <%= link_to image_tag(company[:logo_url],title: company[:name] + ' - ' + company[:short_pitch]), company[:website_url]  %>
             </div>
-            <hr/>
         <% end %>
-    <% end %>
+    </div>
 </div>

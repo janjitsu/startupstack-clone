@@ -10,4 +10,10 @@ class Company
   field :updated_at,  type: Date
 
   has_many :offers, class_name: "Offer", inverse_of: :company
+
+  def self.with_tags(tags)
+    self.collection.find(
+      {'_id':{"$in":Offer.with_tags(tags).distinct('company_id')}}
+    )
+  end
 end

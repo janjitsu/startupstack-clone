@@ -49,8 +49,11 @@ h4.result-message {
 
 .offer-item {
     margin: 40px 0;
+    text-align:center;
     img {
-        width: 14em;
+        margin-top: 5em;
+        width: 10em;
+        min-height: 3em;
     }
     h4 {
         font-size: 1em;
